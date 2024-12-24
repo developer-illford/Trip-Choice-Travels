@@ -1,0 +1,155 @@
+.body {
+  margin: 0;
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+}
+
+/* gallery admin start*/
+
+.layout{
+  width: 100%;
+  height: auto;
+  background-image: url('../img/maldives-island.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+
+.admin_inputs_holder {
+  width: 100%;
+  height: auto;
+  background-color: #ffffff98;
+  padding: 5%;
+  border-radius: 2rem;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.admin_inputs_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.admin_table_container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.admin_inputs_holder input {
+  width: 90%;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.cssbuttons-io-button {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 17px;
+  padding: 0.8em 1.5em 0.8em 1.2em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(0deg, rgb(120, 47, 255) 0%, rgb(185, 132, 255) 100%);
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em rgb(184, 146, 255);
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+}
+
+.cssbuttons-io-button svg {
+  margin-right: 8px;
+}
+
+.cssbuttons-io-button:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em rgb(149, 91, 255);
+}
+
+.cssbuttons-io-button:active {
+  box-shadow: 0 0.3em 1em -0.5em rgb(160, 109, 255);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+  gap: 2px;
+}
+
+.svgIcon {
+  width: 12px;
+  transition-duration: 0.3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.button:hover {
+  transition-duration: 0.3s;
+  background-color: rgb(255, 69, 69);
+  align-items: center;
+  gap: 0;
+}
+
+.bin-top {
+  transform-origin: bottom right;
+}
+.button:hover .bin-top {
+  transition-duration: 0.5s;
+  transform: rotate(160deg);
+}
+
+.logoutbutton{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding-top: 2%;
+}
+
+
+/* gallery admin end*/

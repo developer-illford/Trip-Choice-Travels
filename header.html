@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+     <link rel="shortcut icon" href="img/TRIP CHOICE LOGO.webp" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6c53136549.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- navbar -->
+
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="img/takeoff-l.png" alt="" class="" />
+                </a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="packages.html">Our Packages</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <!-- <li><a href="blog">Blog</a></li> -->
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+                <a href="tel:+919447003974" style="text-decoration: none; ">
+                <button class="nav-button">
+                    <span class="nav-button-content">
+                      
+                            Call Us Now <i class="fa-solid fa-phone-volume"></i>
+                        
+                    </span>
+                </button>
+                </a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- navbar ended-->
+
+
+
+
+    <style>
+        /* navbar */
+        .nav {
+            width: 100%;
+            height: auto;
+            /* Change from fixed height to auto for responsiveness */
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #071D3F;
+            z-index: 1;
+        }
+
+        .nav-content {
+            width: 100%;
+            position: relative;
+            /* Change to relative for logo alignment */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .nav-content img {
+            max-height: 80px;
+            /* Adjust max-height for responsiveness */
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links ul {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-right: 15px;
+            padding-left: 15px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 1.4rem;
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #55EED1;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            margin-right: 10px;
+            /* Adjust margin for better spacing */
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #55EED1;
+            margin: 3px 0;
+            transition: 0.4s;
+        }
+
+        .nav-button {
+            position: relative;
+            overflow: hidden;
+            padding: .5rem 1rem;
+            border-radius: 1.5rem;
+            background: #0454cc;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+
+        }
+
+
+        .nav-button:hover::before {
+            transform: scaleX(1);
+        }
+
+        .nav-button-content {
+            position: relative;
+            z-index: 1;
+            font-size: 1rem;
+        }
+
+        .nav-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: 0 50%;
+            width: 100%;
+            height: inherit;
+            border-radius: inherit;
+            background: black;
+            transition: all 0.475s;
+        }
+
+
+
+        @media screen and (min-width: 1025px) and (max-width: 1255px) {
+            .nav-links a {
+                font-size: 1.2rem;
+                /* Adjust the font size within this range */
+            }
+
+            .nav-links li {
+                margin-right: 15px;
+                padding-left: 15px;
+
+            }
+
+        }
+
+        @media screen and (max-width: 1025px) {
+            .nav {
+                width: 100%;
+                height: 80px;
+
+            }
+
+            .nav-links ul {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                background-color: rgba(235, 235, 235, 0.952);
+                position: absolute;
+                top: 80px;
+                left: 0;
+                margin: 0;
+                z-index: 99999;
+            }
+
+            .nav-links.show ul {
+                display: flex;
+            }
+
+            .nav-content img {
+                max-width: 100%;
+                margin-left: 0;
+            }
+
+            .nav-links li {
+                text-align: center;
+                margin: 10px 0;
+                width: 100%;
+            }
+
+            .nav-links a {
+                color: #071D3F;
+            }
+
+            .hamburger {
+                display: flex;
+                margin-right: 10px;
+            }
+
+            .nav-button {
+                display: none;
+            }
+        }
+
+
+
+        /* navbar ends */
+    </style>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector(".nav-links");
+            navLinks.classList.toggle("show");
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const homeSections = document.querySelectorAll('.home-section');
+
+            homeSections.forEach((homeSection) => {
+                const images = homeSection.querySelectorAll('.background-image');
+                let currentImageIndex = 0;
+
+                setInterval(() => {
+                    images[currentImageIndex].classList.remove('active');
+                    currentImageIndex = (currentImageIndex + 1) % images.length;
+                    images[currentImageIndex].classList.add('active');
+                }, 5000);
+            });
+        });
+
+    </script>
+</body>
+
+</html>

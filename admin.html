@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin</title>
+     <link rel="shortcut icon" href="img/fav_trip_choice.png" />
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            font-weight: bold;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+    <div class="layout">
+        <div class=" row">
+            <div class="admin_inputs_container col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+
+            </div>
+
+            <div class="admin_table_container col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div style="padding-top: 50%; padding-bottom: 50%;">
+                    <div class="admin_inputs_holder ">
+                        <form id="mainForm" >
+                            <input placeholder="Enter username/ e-mail id" type="email" id="email">
+                            <input placeholder="Enter the Password" type="password" id="password">
+
+
+                            <br>
+
+                            <button class="cssbuttons-io-button" type="submit">
+                                <span>Login</span>
+                            </button>
+                        </form>
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="admin_table_container col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+
+
+            </div>
+        </div>
+        
+    </div>
+
+
+
+
+
+
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+        import { getDatabase, get, ref, child } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyAz2p9B9D1akmzj-CP5QdyiWs3Qkxrfvxs",
+            authDomain: "takeoff-45765.firebaseapp.com",
+            databaseURL: "https://takeoff-45765-default-rtdb.firebaseio.com",
+            projectId: "takeoff-45765",
+            storageBucket: "takeoff-45765.appspot.com",
+            messagingSenderId: "774098979346",
+            appId: "1:774098979346:web:89b1e58f4fb0c1c25526cb"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase();
+        const auth = getAuth(app);
+        const dbref = ref(db);
+
+        let email = document.getElementById('email');
+        let password = document.getElementById('password');
+        let mainForm = document.getElementById('mainForm');
+
+        let signInUser = evt => {
+            evt.preventDefault();
+
+            signInWithEmailAndPassword(auth, email.value, password.value)
+                .then((credentials) => {
+                    console.log(credentials);
+
+                    window.location.href = "admin-pannel.html";
+                })
+                .catch((error) => {
+                    alert(error.message);
+                    console.log(error.code);
+                    console.log(error.message);
+                })
+        }
+
+        mainForm.addEventListener('submit', signInUser);
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase.js"></script>
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase.js"></script>
+    <script src="js/admin_pannel_controls.js"></script>
+  <button class="scroll-to-top" id="scroll-to-top" onclick="scrollToTop()">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+</body>
+
+</html>
